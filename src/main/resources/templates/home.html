@@ -1,0 +1,43 @@
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="css/tiy-style.css" rel="stylesheet" type="text/css"/>
+</head>
+<center>
+    {{^user}}
+    <form action="/login" method="post">
+        <input type="text" placeholder="Username" name="userName" required/>
+        <input type="password" placeholder="Password" name="password" required/>
+        <button type="submit">Login</button>
+    </form>
+    {{/user}}
+    </center>
+
+<body><body background="http://wallpoper.com/images/00/38/31/63/fire-hearts_00383163.jpg"></body>
+<center>
+    <div id="logo-div">
+        <img src="http://www.fibromyalgia-support.net/hypnosis/spiral.jpg"/>
+    </div>
+</center>
+
+
+<br><br>
+
+
+<center>
+    <ol>
+        {{#todos}}
+        <li>{{text}}
+            {{#is_done}}
+            (Done Son)
+            {{/is_done}}
+            {{^is_done}}
+
+            {{/is_done}}
+            <a href="/delete?toDoID={{id}}">delete</a> <a href="/modify?toDoID={{id}}">toggle</a>
+        </li>
+        {{/todos}}
+    </ol>
+</center>
+
+</body>
+</html>
